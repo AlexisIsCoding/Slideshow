@@ -1,7 +1,8 @@
 #slideshow {
-    width: 1024px;
-    height: 768px;
+    width: 60em;
+    height: 30em;
     background-image: none;
     background-size: cover;
+    background-position: center;
     opacity: 0;
 }
