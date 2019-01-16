@@ -1,78 +1,78 @@
-function fonduOpacite() {
+function moltenOpacity() {
 
-    if (direction === "augmentation") {
+    if (way === "increase") {
 
-        if (opaciteRepere < 1) {
+        if (landmarkOpacity < 1) {
 
-            diapoElmt.style.opacity = opaciteRepere + vitesse;
+            slideshowElmt.style.opacity = landmarkOpacity + speed;
 
-            opaciteRepere += vitesse;
+            landmarkOpacity += speed;
 
-            requestAnimationFrame(fonduOpacite);
+            requestAnimationFrame(moltenOpacity);
 
         } else {
 
-            direction = "diminution";
+            way = "decrease";
 
-            cancelAnimationFrame(animationFondu);
+            cancelAnimationFrame(moltenAnimation);
         }
 
 
-    } else if (direction === "diminution") {
+    } else if (way === "decrease") {
 
-        if (opaciteRepere > 0) {
+        if (landmarkOpacity > 0) {
 
-            diapoElmt.style.opacity = opaciteRepere - vitesse;
+            slideshowElmt.style.opacity = landmarkOpacity - speed;
 
-            opaciteRepere -= vitesse;
+            landmarkOpacity -= speed;
 
-            requestAnimationFrame(fonduOpacite);
+            requestAnimationFrame(moltenOpacity);
 
         } else {
 
-            opaciteRepere = 0;
+            landmarkOpacity = 0;
 
-            diapoElmt.style.opacity = opaciteRepere;
+            slideshowElmt.style.opacity = landmarkOpacity;
 
-            direction = "augmentation";
+            way = "increase";
 
-            cancelAnimationFrame(animationFondu);
+            cancelAnimationFrame(moltenAnimation);
         }
 
     }
 
-    console.log(diapoElmt.style.opacity);
+    console.log(slideshowElmt.style.opacity);
 }
 
-function diapoRoulement() {
+function slideshowRolling() {
 
-    setTimeout(fonduOpacite, 50);
+    setTimeout(moltenOpacity, 50);
 
-    setTimeout(fonduOpacite, 9000);
+    setTimeout(moltenOpacity, 9000);
 
-    aleatoire = Math.floor(Math.random() * listeImg.length);
+    randomValue = Math.floor(Math.random() * picturesList.length);
 
-    console.log(aleatoire);
+    // console.log(randomValue);
 
-    diapoElmt.style.backgroundImage = listeImg[aleatoire];
+    slideshowElmt.style.backgroundImage = picturesList[randomValue];
 }
 
-var diapoElmt = document.getElementById("diapo");
-// var diapoImg = getComputedStyle(diapoElmt).backgroundImage;
-// var diapoOpacity = getComputedStyle(diapoElmt).opacity;
+var slideshowElmt = document.getElementById("diapo");
+// var diapoImg = getComputedStyle(slideshowElmt).backgroundImage;
+// var diapoOpacity = getComputedStyle(slideshowElmt).opacity;
 
-var listeImg = ["url(\"../z-img/img1.jpg\")", "url(\"../z-img/img2.jpg\")"];
-var aleatoire = Math.floor(Math.random() * listeImg.length);
+var picturesList = ["url(\"https://cdn.pixabay.com/photo/2016/02/19/11/51/louvre-1210004_1280.jpg\")", "url(\"https://cdn.pixabay.com/photo/2016/03/09/09/45/paris-1245970_1280.jpg\")"];
+var randomValue = Math.floor(Math.random() * picturesList.length);
 
-var animationFondu = 0;
-var direction = "augmentation";
-var opaciteRepere = 0;
-var vitesse = 0.02;
+var moltenAnimation = 0;
+var way = "increase";
+var landmarkOpacity = 0;
+var speed = 0.02;
 
-diapoElmt.style.backgroundImage = listeImg[aleatoire];
-setTimeout(fonduOpacite, 50);
-setTimeout(fonduOpacite, 9000);
+slideshowElmt.style.backgroundImage = picturesList[randomValue];
+setTimeout(moltenOpacity, 50);
+setTimeout(moltenOpacity, 9000);
 
-console.log(diapoElmt.style.backgroundImage);
+// console.log(slideshowElmt.style.backgroundImage);
 
-setInterval(diapoRoulement, 10000);
+setInterval(slideshowRolling, 10000);
