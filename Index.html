@@ -1,33 +1,59 @@
 <doctype html>
-    
+
 <html lang="fr">
-    
+
     <head>
         <meta charset="utf-8" />
         <title>Diaporama / Slideshow</title>
-        
+
         <!-- Fichier.css essentiel au diaporama -->
         <!-- Needed slideshow's File.css -->
         <link type="text/css" rel="stylesheet" href="Style.css" />
-        
+
         <!-- Fichier.css de mise en page -->
         <!-- Other(s) visual(s) File.css -->
         <link type="text/css" rel="stylesheet" href="Mise_en_page/Index.css" />
         <link type="text/css" rel="stylesheet" href="Mise_en_page/Bootstrap/css/bootstrap-grid.min.css" />
     </head>
-    
+
     <body>
-        <h1>Diaporama / Slideshow</h1>
-        
-        <div id="slideshow"></div>
-        
+        <div class="container">
+            <section class="row">
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h1 id="title">Diaporama / Slideshow</h1>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p id="exampleFr">Ceci est l'exemple d'un diaporama créé grâce à un fondu d'opacité, rendant ainsi plus agréable le changement entre chaque image..</p>
+
+                            <p id="exampleEn"> This is an example of a slide show created by an opacity fade, making it easier to change between each image.. </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="row">
+                <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                    <!-- <div> conteneur du diaporama -->
+                    <!-- Slideshow's <div> -->
+                    <div id="slideshow"></div>
+
+                </article>
+                
+                <aside class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p id="disclaimer">Photos utilisée toutes libres de droit, hébergée sur <a href="https://pixabay.com/" target="_blank">Pixabay.com</a>.</p>
+                </aside>
+            </section>
+        </div>
+
         <!-- Fichier.js essentiel au diaporama -->
         <!-- Needed slideshow's File.js -->
         <script src="Script.js"></script>
-        
+
         <!-- Fichier.js de fonctionnalités diverses -->
         <!-- Other(s) fonctional(s) File.js -->
         <script src="Mise_en_page/Index.js"></script>
     </body>
-    
+
 </html>
