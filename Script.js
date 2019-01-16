@@ -57,7 +57,7 @@ function slideshowRolling() {
     slideshowElmt.style.backgroundImage = picturesList[randomValue];
 }
 
-var slideshowElmt = document.getElementById("diapo");
+var slideshowElmt = document.getElementById("slideshow");
 // var diapoImg = getComputedStyle(slideshowElmt).backgroundImage;
 // var diapoOpacity = getComputedStyle(slideshowElmt).opacity;
 
