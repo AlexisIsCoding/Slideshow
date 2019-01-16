@@ -1,0 +1,7 @@
+#slideshow {
+    width: 1024px;
+    height: 768px;
+    background-image: none;
+    background-size: cover;
+    opacity: 0;
+}
