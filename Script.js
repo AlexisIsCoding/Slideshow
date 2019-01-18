@@ -1,4 +1,4 @@
-function moltenOpacity() {
+function opacityFade() {
 
     if (way === "increase") {
 
@@ -8,13 +8,13 @@ function moltenOpacity() {
 
             landmarkOpacity += speed;
 
-            requestAnimationFrame(moltenOpacity);
+            requestAnimationFrame(opacityFade);
 
         } else {
 
             way = "decrease";
 
-            cancelAnimationFrame(moltenAnimation);
+            cancelAnimationFrame(animationFade);
         }
 
 
@@ -26,7 +26,7 @@ function moltenOpacity() {
 
             landmarkOpacity -= speed;
 
-            requestAnimationFrame(moltenOpacity);
+            requestAnimationFrame(opacityFade);
 
         } else {
 
@@ -36,22 +36,20 @@ function moltenOpacity() {
 
             way = "increase";
 
-            cancelAnimationFrame(moltenAnimation);
+            cancelAnimationFrame(animationFade);
         }
 
     }
 
-    console.log(slideshowElmt.style.opacity);
+    // console.log(slideshowElmt.style.opacity);
 }
 
 function slideshowRolling() {
 
-    setTimeout(moltenOpacity, 50);
-
-    setTimeout(moltenOpacity, 9000);
+    setTimeout(opacityFade, 50);
+    setTimeout(opacityFade, 9000);
 
     randomValue = Math.floor(Math.random() * picturesList.length);
-
     // console.log(randomValue);
 
     slideshowElmt.style.backgroundImage = picturesList[randomValue];
@@ -64,15 +62,47 @@ var slideshowElmt = document.getElementById("slideshow");
 var picturesList = ["url(\"https://cdn.pixabay.com/photo/2016/02/19/11/51/louvre-1210004_1280.jpg\")", "url(\"https://cdn.pixabay.com/photo/2016/03/09/09/45/paris-1245970_1280.jpg\")"];
 var randomValue = Math.floor(Math.random() * picturesList.length);
 
-var moltenAnimation = 0;
+var animationFade = 0;
 var way = "increase";
 var landmarkOpacity = 0;
 var speed = 0.02;
 
-slideshowElmt.style.backgroundImage = picturesList[randomValue];
-setTimeout(moltenOpacity, 50);
-setTimeout(moltenOpacity, 9000);
+var firstTimeOut = setTimeout(opacityFade, 50);
+var secondTimeOut = setTimeout(opacityFade, 9000);
+var intervalRolling = setInterval(slideshowRolling, 10000);
 
+slideshowElmt.style.backgroundImage = picturesList[randomValue];
 // console.log(slideshowElmt.style.backgroundImage);
 
-setInterval(slideshowRolling, 10000);
+firstTimeOut;
+secondTimeOut;
+intervalRolling;
+
+window.onfocus = function () {
+
+    way = "increase";
+
+    slideshowElmt.style.backgroundImage = picturesList[randomValue];
+    // console.log(slideshowElmt.style.backgroundImage);
+    
+    firstTimeOut = setTimeout(opacityFade, 50);
+    secondTimeOut = setTimeout(opacityFade, 9000);
+    intervalRolling = setInterval(slideshowRolling, 10000);
+};
+
+
+window.onblur = function () {
+    
+    if (way === "increase") {
+      
+        way = "decrease";
+    };
+
+    landmarkOpacity = 0;
+    slideshowElmt.style.opacity = landmarkOpacity;
+
+    clearInterval(intervalRolling);
+    clearTimeout(secondTimeOut);
+    clearTimeout(firstTimeOut);
+
+};
