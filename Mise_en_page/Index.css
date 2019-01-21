@@ -1,1 +1,32 @@
-Commande ECHO activ‚e.
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('Mise_en_page\Fonts\opensans_bold\OpenSans-Bold-webfont.eot');
+    src: url('Mise_en_page\Fonts\opensans_bold\OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Mise_en_page\Fonts\opensans_bold\OpenSans-Bold-webfont.woff2') format('woff2'),
+        url('Mise_en_page\Fonts\opensans_bold\OpenSans-Bold-webfont.woff') format('woff'),
+        url('Mise_en_page\Fonts\opensans_bold\OpenSans-Bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.eot');
+    src: url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.woff2') format('woff2'),
+        url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.woff') format('woff'),
+        url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('Mise_en_page\Fonts\opensans_regular\OpenSans-Regular-webfont.eot');
+    src: url('Mise_en_page\Fonts\opensans_regular\OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Mise_en_page\Fonts\opensans_regular\OpenSans-Regular-webfont.woff2') format('woff2'),
+        url('OpenSans-Regular-webfont.woff') format('woff'),
+        url('OpenSans-Regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
