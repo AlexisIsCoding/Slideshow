@@ -46,8 +46,8 @@ function opacityFade() {
 
 function slideshowRolling() {
 
-    setTimeout(opacityFade, 50);
-    setTimeout(opacityFade, 9000);
+    firstTimeOut = setTimeout(opacityFade, 50);
+    secondTimeOut = setTimeout(opacityFade, 9000);
 
     randomValue = Math.floor(Math.random() * picturesList.length);
     // console.log(randomValue);
