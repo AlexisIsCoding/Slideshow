@@ -1,21 +1,19 @@
 @font-face {
     font-family: 'open_sanslight';
-    src: url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.eot');
-    src: url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-        url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.woff2') format('woff2'),
-        url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.woff') format('woff'),
-        url('Mise_en_page\Fonts\opensans_light\OpenSans-Light-webfont.ttf') format('truetype');
+    src: url('Fonts/opensans_light/OpenSans-Light-webfont.eot');
+    src: url('Fonts/opensans_light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/opensans_light/OpenSans-Light-webfont.woff') format('woff'),
+        url('Fonts/opensans_light/OpenSans-Light-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'open_sansregular';
-    src: url('Mise_en_page\Fonts\opensans_regular\OpenSans-Regular-webfont.eot');
-    src: url('Mise_en_page\Fonts\opensans_regular\OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('Mise_en_page\Fonts\opensans_regular\OpenSans-Regular-webfont.woff2') format('woff2'),
-        url('OpenSans-Regular-webfont.woff') format('woff'),
-        url('OpenSans-Regular-webfont.ttf') format('truetype');
+    src: url('Fonts/opensans_regular/OpenSans-Regular-webfont.eot');
+    src: url('Fonts/opensans_regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/opensans_regular/OpenSans-Regular-webfont.woff') format('woff'),
+        url('Fonts/opensans_regular/OpenSans-Regular-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,4 +26,9 @@ h1 {
 p { 
     font-family: "open_sanslight", sans-serif;
     text-align: center;
+}
+
+a {
+    color: cadetblue;
+    text-decoration: none;
 }
