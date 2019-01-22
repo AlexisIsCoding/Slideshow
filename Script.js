@@ -55,54 +55,61 @@ function slideshowRolling() {
     slideshowElmt.style.backgroundImage = picturesList[randomValue];
 }
 
+function slideshowReverse() {
+
+    firstTimeOut = setTimeout(opacityFade, 50);
+
+    optionalTimeOut = setTimeout(function () {
+
+        randomValue = Math.floor(Math.random() * picturesList.length);
+        // console.log(randomValue);
+
+        slideshowElmt.style.backgroundImage = picturesList[randomValue];
+        // console.log(slideshowElmt.style.backgroundImage);
+    }, 1050);
+
+    secondTimeOut = setTimeout(opacityFade, 1100);
+}
+
 var slideshowElmt = document.getElementById("slideshow");
 // var diapoImg = getComputedStyle(slideshowElmt).backgroundImage;
 // var diapoOpacity = getComputedStyle(slideshowElmt).opacity;
 
 var picturesList = ["url(\"https://cdn.pixabay.com/photo/2016/02/19/11/51/louvre-1210004_1280.jpg\")", "url(\"https://cdn.pixabay.com/photo/2016/03/09/09/45/paris-1245970_1280.jpg\")"];
-var randomValue = Math.floor(Math.random() * picturesList.length);
+var randomValue = undefined;
 
 var animationFade = 0;
 var way = "increase";
 var landmarkOpacity = 0;
 var speed = 0.02;
 
-var firstTimeOut = setTimeout(opacityFade, 50);
-var secondTimeOut = setTimeout(opacityFade, 9000);
+var firstTimeOut = undefined;
+var secondTimeOut = undefined;
+var optionalTimeOut = undefined;
 var intervalRolling = setInterval(slideshowRolling, 10000);
 
-slideshowElmt.style.backgroundImage = picturesList[randomValue];
-// console.log(slideshowElmt.style.backgroundImage);
-
-firstTimeOut;
-secondTimeOut;
+slideshowRolling();
 intervalRolling;
 
 window.onfocus = function () {
 
-    way = "increase";
-
-    slideshowElmt.style.backgroundImage = picturesList[randomValue];
-    // console.log(slideshowElmt.style.backgroundImage);
+    way = "decrease";
     
-    firstTimeOut = setTimeout(opacityFade, 50);
-    secondTimeOut = setTimeout(opacityFade, 9000);
-    intervalRolling = setInterval(slideshowRolling, 10000);
+    slideshowReverse();
+
+    intervalRolling = setInterval(slideshowReverse, 10000);
 };
 
 
 window.onblur = function () {
-    
-    if (way === "increase") {
-      
-        way = "decrease";
-    };
 
-    landmarkOpacity = 0;
+    way = "increase";
+    
+    landmarkOpacity = 1;
     slideshowElmt.style.opacity = landmarkOpacity;
 
     clearInterval(intervalRolling);
+    clearTimeout(optionalTimeOut);
     clearTimeout(secondTimeOut);
     clearTimeout(firstTimeOut);
-
 };
