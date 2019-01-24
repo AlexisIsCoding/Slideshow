@@ -64,6 +64,12 @@ function slideshowRolling() {
 
     // Changement d'image parmis un élément aléatoire de la liste de photo | Image change from random element in the pictures list
     slideshowElmt.style.backgroundImage = picturesList[randomValue];
+    
+    if (!intervalRolling) {
+        
+        intervalRolling = setInterval(slideshowRolling, 10000);
+    }
+    
 }
 
 
@@ -86,6 +92,12 @@ function slideshowReverse() {
 
     // Délai de la montée d'opacité | Opacity rise Timeout
     secondTimeOut = setTimeout(opacityFade, 1100);
+    
+    if (!intervalReverse) {
+        
+        intervalReverse = setInterval(slideshowReverse, 10000);
+    }
+    
 }
 
 
@@ -112,25 +124,25 @@ var animationFade = 0;
 var firstTimeOut = undefined;
 var secondTimeOut = undefined;
 var optionalTimeOut = undefined;
-var intervalRolling = setInterval(slideshowRolling, 10000);
+var intervalRolling = undefined; 
+var intervalReverse = undefined;
 
 // ------------------------------- Initialisation | Initailization -------------------------------
 
 // ********** Initailisation du diaporama initial au chargement de la page **********
 // ********** Initailization of the initial slideshowRolling when page is on load **********
 slideshowRolling();
-intervalRolling;
 
 
 // ********** Initailisation du diaporama inversé à la reprise du focus sur l'onglet **********
 // ********** Initailization of the slideshowReverse when the focus is reopened on the tab **********
 window.onfocus = function () { 
 
+    // Changement de sens du fondu d'opacité | Changing way of the opacity fade
     way = "decrease";
     
     slideshowReverse();
 
-    intervalRolling = setInterval(slideshowReverse, 10000);
 };
 
 
@@ -138,14 +150,19 @@ window.onfocus = function () {
 // ********** Maintain image and opacity & reset timeout and functions at focus loss (Tab change) **********
 window.onblur = function () {
 
+    // Préparation au changement de sens du fondu d'opacité | Preparation for changing the way of the opacity fade
     way = "increase";
     
+    // Maintien de l'opacité au maximum et de l'image en cours | Maintaining maximum opacity and current image
     landmarkOpacity = 1;
     slideshowElmt.style.opacity = landmarkOpacity;
-
+    
     // Réinitialisation des délais et des fonctions | Reset timeout and functions
+    clearInterval(intervalReverse);
     clearInterval(intervalRolling);
     clearTimeout(optionalTimeOut);
     clearTimeout(secondTimeOut);
     clearTimeout(firstTimeOut);
+    
+    intervalReverse = undefined;
 };
