@@ -15,7 +15,7 @@ Creating slideshow with Opacity fade.
 ## Présentation / Presentation 
 
 #### Français
-J'ai chercher à réaliser dernièrement un diaporama, pour un projet personnel, faisant office d'image de fond animée sur la page principale d'un site dedié à la photographie, où quelques photos seraient ainsi présentés avant que le client ne vienne jeter un oeil à la galerie.
+J'ai cherché à réaliser dernièrement un diaporama, pour un projet personnel, faisant office d'images de fond animées sur la page principale d'un site dedié à la photographie, où quelques photos seraient ainsi présentées avant que le client ne vienne jeter un oeil à la galerie.
 
 N'ayant pour l'instant que des notions d'HTML, CSS et Javascript, j'ai commencé à créer quelque chose de rudimentaire, avec mes connaîssances, et à l'aide de plusieurs threads, sur differents forums, mais la plupart présentant des programmes nécéssitant des connaissances en JQuery ou PHP, j'ai voulu faire quelque chose de plus accèssible et, bien que des choses soient à revoir encore, un minimum fonctionnel.
 
